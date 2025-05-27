@@ -1,0 +1,136 @@
+/* Стили для светлой темы */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.light-theme {
+  background-color: #eaeaea; /* Светлый фон */
+  color: #000; /* Чёрный текст */
+}
+
+.dark-theme {
+  background-color: #333; /* Тёмный фон */
+  color: #fff; /* Белый текст */
+}
+
+/* Остальной CSS остаётся таким же */
+
+.container {
+  background-color: white;
+  border-radius: 0px;
+  width: 60%;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 0.5s;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeIn 1s forwards 1s;
+}
+
+h1, h2, p, ul {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 1.5s;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s forwards 2s;
+}
+
+/* Модалка */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0px;
+  width: 50%;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+/* Уменьшенная кнопка переключения темы */
+#themeSwitcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
